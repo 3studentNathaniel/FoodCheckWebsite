@@ -7,7 +7,7 @@ burgerMenu.addEventListener('click', function() {
     navLinks.classList.toggle('active');
 });
 
-// Close menu on link click
+// Close menu when clicking a link
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', function() {
         burgerMenu.classList.remove('active');
@@ -15,7 +15,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     });
 });
 
-// Smooth scrolling
+// Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -29,13 +29,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// CTA button event
+// CTA Button click handler
 const ctaButton = document.querySelector('.cta-button');
 ctaButton.addEventListener('click', function() {
     alert('Thank you for your interest! Download links coming soon.');
 });
 
-// Scroll effect on header
+// Add scroll effect to header
 let lastScroll = 0;
 const header = document.querySelector('header');
 
@@ -53,7 +53,7 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
-// Animation on scroll
+// Animate feature cards on scroll
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -100px 0px'
@@ -68,11 +68,30 @@ const observer = new IntersectionObserver(function(entries) {
     });
 }, observerOptions);
 
-// Observe feature cards + steps
+// Observe all feature cards and steps
 document.querySelectorAll('.feature-card, .step').forEach(card => {
     card.style.opacity = '0';
     card.style.transform = 'translateY(30px)';
     observer.observe(card);
+});
+
+// Feature scroll buttons functionality
+const featuresContainer = document.querySelector('.features');
+const scrollLeftBtn = document.getElementById('scrollLeft');
+const scrollRightBtn = document.getElementById('scrollRight');
+
+scrollLeftBtn.addEventListener('click', () => {
+    featuresContainer.scrollBy({
+        left: -350,
+        behavior: 'smooth'
+    });
+});
+
+scrollRightBtn.addEventListener('click', () => {
+    featuresContainer.scrollBy({
+        left: 350,
+        behavior: 'smooth'
+    });
 });
 
 console.log('FoodCheck website loaded successfully!');

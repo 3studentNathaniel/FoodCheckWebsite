@@ -1,3 +1,4 @@
+/* Reset and base styles */
 * {
     margin: 0;
     padding: 0;
@@ -11,6 +12,7 @@ body {
     overflow-x: hidden;
 }
 
+/* Header */
 header {
     background: linear-gradient(135deg, rgb(34, 193, 195) 0%, rgb(118, 255, 178) 100%);
     color: white;
@@ -46,6 +48,16 @@ nav {
     list-style: none;
 }
 
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 0.8;
+}
+
 .burger-menu {
     display: none;
     flex-direction: column;
@@ -74,16 +86,7 @@ nav {
     transform: rotate(-45deg) translate(7px, -6px);
 }
 
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    transition: opacity 0.3s;
-}
-
-.nav-links a:hover {
-    opacity: 0.8;
-}
-
+/* Hero Section */
 .hero {
     background: linear-gradient(135deg, rgb(20, 150, 140) 0%, rgb(80, 210, 180) 100%);
     color: white;
@@ -131,10 +134,15 @@ nav {
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
-.features {
+/* Features */
+.features-container {
+    position: relative;
     max-width: 1200px;
     margin: 4rem auto;
     padding: 0 2rem;
+}
+
+.features {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
@@ -165,6 +173,41 @@ nav {
     font-size: 1.5rem;
 }
 
+/* Scroll buttons */
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.scroll-button:hover {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+
+.scroll-button.left {
+    left: -25px;
+}
+
+.scroll-button.right {
+    right: -25px;
+}
+
+/* How It Works */
 .how-it-works {
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     padding: 4rem 2rem;
@@ -207,6 +250,7 @@ nav {
     margin: 0 auto 1rem;
 }
 
+/* Footer */
 footer {
     background: #2d3748;
     color: white;
@@ -215,9 +259,23 @@ footer {
     margin-top: 4rem;
 }
 
+/* Animations */
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (min-width: 769px) {
+    .scroll-button {
+        display: flex;
+    }
 }
 
 @media (max-width: 768px) {
@@ -232,7 +290,7 @@ footer {
     .hero-intro {
         font-size: 1rem;
     }
-    
+
     .nav-links {
         position: fixed;
         top: 60px;
