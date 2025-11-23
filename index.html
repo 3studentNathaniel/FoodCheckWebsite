@@ -1,44 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FoodCheck</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodCheck - AI-Powered Food Recognition</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <nav>
-            <ul id="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#what">What is it?</a></li>
-                <li><a href="#download">Download</a></li>
-                <li><a href="#about">About</a></li>
+            <div class="logo">
+                🍽️ FoodCheck
+            </div>
+            <div class="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#scanned">Scanned Products</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section id="home" class="section">
-            <h1>Welcome to FoodCheck</h1>
-            <p>Your smart companion for checking food details and nutrition facts.</p>
-        </section>
+    <section class="hero">
+        <h1>Identify Food Products, Instantly!</h1>
+        <p>Snap a photo and let AI-powered image recognition tell you exactly what's on your plate</p>
+        <button class="cta-button">Download Now</button>
+    </section>
 
-        <section id="what" class="section">
-            <h1>What is it for?</h1>
-            <p>FoodCheck helps users scan, analyze, and understand food information easily.</p>
-        </section>
+    <section class="features" id="features">
+        <div class="feature-card">
+            <div class="feature-icon">📸</div>
+            <h3>Image Recognition</h3>
+            <p>Advanced AI-powered image recognition technology identifies food items from your photos instantly</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🔍</div>
+            <h3>Food Data API</h3>
+            <p>Automatically fetches comprehensive food data from our extensive API database</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>Nutritional Info</h3>
+            <p>Get detailed nutritional information for recognized foods to track your diet effectively</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🎯</div>
+            <h3>Goal Tracking</h3>
+            <p>Set personal health goals and monitor your scanned products to stay on track</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">💾</div>
+            <h3>Save & Search</h3>
+            <p>All scanned products are saved locally with searchable history for easy reference</p>
+        </div>
+    </section>
 
-        <section id="download" class="section">
-            <h1>Download</h1>
-            <p>The FoodCheck mobile app will be available soon.</p>
-        </section>
+    <section class="how-it-works" id="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Snap a Photo</h3>
+                <p>Take a picture of any food item using your smartphone camera</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>AI Analysis</h3>
+                <p>Our API processes the image using advanced machine learning algorithms</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Get Results</h3>
+                <p>Receive instant identification with nutritional details and ingredient information</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Track Goals</h3>
+                <p>Monitor your intake against personal health goals with automatic tracking</p>
+            </div>
+        </div>
+    </section>
 
-        <section id="about" class="section">
-            <h1>About</h1>
-            <p>FoodCheck is developed to help people make healthier food choices.</p>
-        </section>
-    </main>
+    <section class="search-section" id="scanned">
+        <h2>Scanned Products</h2>
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search your scanned products..." id="searchInput">
+            <span class="search-icon">🔍</span>
+        </div>
+        <div class="scanned-products" id="productsList">
+            <div class="no-results">No scanned products yet. Start scanning to see your history!</div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p>&copy; 2025 FoodCheck. All rights reserved.</p>
+        <p>Powered by AI Image Recognition API</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
